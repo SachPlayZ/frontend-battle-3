@@ -55,7 +55,7 @@ export default function CarouselComponent() {
                                     <h3 className="text-3xl font-bold">{slide.title}</h3>
                                     <p className="text-gray-300">{slide.description}</p>
                                     <div className="flex space-x-2">
-                                        <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded">
+                                        <button className="bg-gray-700 hover:bg-purple-600 text-white py-2 px-4 rounded">
                                             Read More
                                         </button>
                                         <div className="flex space-x-2">

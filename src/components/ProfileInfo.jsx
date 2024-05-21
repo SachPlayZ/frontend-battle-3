@@ -43,8 +43,11 @@ const ProfileInfo = () => {
           </div>
           <div className="space-y-8">
             <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <PencilIcon className="absolute top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
+            <div className='flex justify-between'>
+
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">About</h2>
+              <PencilIcon className="absolute rounded-full hover:bg-gray-600 top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
+            </div>
               <p className="text-gray-600 dark:text-gray-300">
                 I am a passionate software engineer with over 5 years of experience in building web applications. I have
                 a strong background in JavaScript, React, and Node.js, and I'm always eager to learn new technologies
@@ -52,8 +55,11 @@ const ProfileInfo = () => {
               </p>
             </div>
             <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <PencilIcon className="absolute top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Experience</h2>
+            <div className='flex justify-between'>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Experience</h2>
+              <PencilIcon className="absolute rounded-full hover:bg-gray-600 top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
+            </div>
+              
               <div className="space-y-6">
                 <div className="grid gap-2">
                   <div className="flex items-center justify-between">
@@ -90,8 +96,10 @@ const ProfileInfo = () => {
               </div>
             </div>
             <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <PencilIcon className="absolute top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
+            <div className='flex justify-between'>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Education</h2>
+              <PencilIcon className="absolute rounded-full hover:bg-gray-600 top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
+            </div>
               <div className="space-y-6">
                 <div className="grid gap-2">
                   <div className="flex items-center justify-between">
@@ -112,8 +120,10 @@ const ProfileInfo = () => {
               </div>
             </div>
             <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <PencilIcon className="absolute top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
+            <div className='flex justify-between'>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Skills</h2>
+              <PencilIcon className="absolute rounded-full hover:bg-gray-600 top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
+            </div>
               <div className="flex flex-wrap gap-2">
                 <span className="flex items-center bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
                   <SiJavascript className="mr-1" /> JavaScript

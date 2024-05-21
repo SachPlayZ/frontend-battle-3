@@ -44,22 +44,22 @@ const Navbar = () => {
   return (
     <header className="flex items-center justify-between bg-gray-950 px-4 py-3 text-white md:px-6">
       <div className="flex items-center gap-4">
-        <Link className="flex items-center gap-2 mr-6" to="#">
+        <Link className="flex items-center gap-2 mr-6" to="/">
           <TwitchIcon className="h-6 w-6" />
         </Link>
         {!isSearchVisible && (
           <div className="hidden md:flex gap-4">
-            <Link className="hover:text-purple-400" to="#">Connections</Link>
+            <Link className="hover:text-purple-400" to="/connections">Connections</Link>
             <Link className="hover:text-purple-400" to="#">Jobs</Link>
           </div>
         )}
         {!isSearchVisible && (
           <div className="flex md:hidden gap-4">
-            <button className="rounded-full" size="icon" variant="ghost">
+            <Link to="/connections" className="rounded-full" size="icon" variant="ghost">
               <ConnectionsIcon className="h-5 w-5" />
               <span className="sr-only">Connections</span>
 
-              </button>
+              </Link>
             <button className="rounded-full" size="icon" variant="ghost">
               <JobsIcon className="h-5 w-5" />
               <span className="sr-only">Jobs</span>
@@ -94,14 +94,14 @@ const Navbar = () => {
           <button className="relative group rounded-full" size="icon" variant="ghost">
             <NotificationIcon className="h-5 w-5" />
             <span className="sr-only">Notifications</span>
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-max rounded-md bg-gray-900 p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-max rounded-md bg-gray-900 p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-40">
               Notifications
             </div>
           </button>
           <button className="relative group rounded-full" size="icon" variant="ghost">
             <MessageIcon className="h-5 w-5" />
             <span className="sr-only">Messages</span>
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-max rounded-md bg-gray-900 p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-max rounded-md bg-gray-900 p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-40">
               Messages
             </div>
           </button>
