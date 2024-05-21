@@ -42,7 +42,7 @@ const ProfileInfo = () => {
             </button>
           </div>
           <div className="space-y-8">
-            <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="relative space-y-4 bg-white dark:bg-[#1A1A1A] p-6 rounded-lg shadow-lg">
             <div className='flex justify-between'>
 
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">About</h2>
@@ -54,7 +54,7 @@ const ProfileInfo = () => {
                 and techniques to improve my skills.
               </p>
             </div>
-            <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="relative space-y-4 bg-white dark:bg-[#1A1A1A] p-6 rounded-lg shadow-lg">
             <div className='flex justify-between'>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Experience</h2>
               <PencilIcon className="absolute rounded-full hover:bg-gray-600 top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
@@ -95,7 +95,7 @@ const ProfileInfo = () => {
                 </div>
               </div>
             </div>
-            <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="relative space-y-4 bg-white dark:bg-[#1A1A1A] p-6 rounded-lg shadow-lg">
             <div className='flex justify-between'>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Education</h2>
               <PencilIcon className="absolute rounded-full hover:bg-gray-600 top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />
@@ -119,7 +119,7 @@ const ProfileInfo = () => {
                 </div>
               </div>
             </div>
-            <div className="relative space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="relative space-y-4 bg-white dark:bg-[#1A1A1A] p-6 rounded-lg shadow-lg">
             <div className='flex justify-between'>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Skills</h2>
               <PencilIcon className="absolute rounded-full hover:bg-gray-600 top-4 right-4 h-5 w-5 text-gray-600 dark:text-gray-300 cursor-pointer" />

@@ -111,7 +111,7 @@ const JobListingPage = () => {
       <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">Job Listings</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {jobs.map(job => (
-          <div key={job.id} className="bg-gray-900 dark:bg-gray-800 rounded-lg p-4">
+          <div key={job.id} className="bg-gray-900 dark:bg-[#1A1A1A] rounded-lg p-4">
             <div className="flex items-center mb-2">
               <img src={job.logo} alt={job.company} className="h-8 w-8 mr-2 object-cover" />
               <h2 className="text-lg font-medium text-gray-50">{job.title}</h2>

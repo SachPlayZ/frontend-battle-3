@@ -56,7 +56,7 @@ const ConnectionList = () => {
           {connectedUsers.map((user) => (
             <div
               key={user.id}
-              className="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 flex items-center animate-fadeIn"
+              className="bg-gray-900 dark:bg-[#1A1A1A] rounded-lg p-4 flex items-center animate-fadeIn"
             >
               <div className="flex-shrink-0 mr-4">
                 <img
@@ -94,7 +94,7 @@ const ConnectionList = () => {
           {recommendedConnections.map((connection) => (
             <div
               key={connection.id}
-              className="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 flex items-center animate-fadeIn"
+              className="bg-gray-900 dark:bg-[#1A1A1A] rounded-lg p-4 flex items-center animate-fadeIn"
             >
               <div className="flex-shrink-0 mr-4">
                 <img

@@ -91,20 +91,20 @@ const Navbar = () => {
           <span className="sr-only">Search</span>
         </button>
         <div className="hidden md:flex items-center gap-4 me-6">
-          <button className="relative group rounded-full" size="icon" variant="ghost">
+          <Link to="/notifications" className="relative group rounded-full" size="icon" variant="ghost">
             <NotificationIcon className="h-5 w-5" />
             <span className="sr-only">Notifications</span>
             <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-max rounded-md bg-gray-900 p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-40">
               Notifications
             </div>
-          </button>
-          <button className="relative group rounded-full" size="icon" variant="ghost">
+          </Link>
+          <Link to="/messages" className="relative group rounded-full" size="icon" variant="ghost">
             <MessageIcon className="h-5 w-5" />
             <span className="sr-only">Messages</span>
             <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-max rounded-md bg-gray-900 p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-40">
               Messages
             </div>
-          </button>
+          </Link>
         </div>
         <div className="relative md:hidden" ref={dropdownRef}>
           <button onClick={toggleDropdown} className="rounded-full" size="icon" variant="ghost">
@@ -113,11 +113,11 @@ const Navbar = () => {
           </button>
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 py-2 bg-gray-900 rounded-md shadow-xl z-50">
-              <Link className="flex items-center gap-2 px-4 py-2 text-gray-200 hover:bg-gray-700" to="#">
+              <Link className="flex items-center gap-2 px-4 py-2 text-gray-200 hover:bg-gray-700" to="/notifications">
                 <NotificationIcon className="h-5 w-5" />
                 <span>Notifications</span>
               </Link>
-              <Link className="flex items-center gap-2 px-4 py-2 text-gray-200 hover:bg-gray-700" to="#">
+              <Link className="flex items-center gap-2 px-4 py-2 text-gray-200 hover:bg-gray-700" to="/messages">
                 <MessageIcon className="h-5 w-5" />
                 <span>Messages</span>
               </Link>

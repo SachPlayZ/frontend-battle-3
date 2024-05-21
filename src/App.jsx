@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import ProfilePage from './pages/ProfilePage'
 import ConnectionsPage from './pages/ConnectionsPage'
 import JobPage from './pages/JobPage'
-
+import NotificationPage from './pages/NotificationPage'
 function App() {
   return (
 <>
@@ -17,6 +17,7 @@ function App() {
   <Route path="/profile" element={<ProfilePage />} />
   <Route path='/connections' element={<ConnectionsPage />} />
   <Route path='/jobs' element={<JobPage />} />
+  <Route path='/notifications' element={<NotificationPage />} />
 </Routes>
 </>
 
