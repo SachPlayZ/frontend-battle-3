@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false); // New state for suggestions
   const dropdownRef = useRef(null);
   const userDropdownRef = useRef(null);
 
@@ -26,6 +27,7 @@ const Navbar = () => {
     if (userDropdownRef.current && !userDropdownRef.current.contains(event.target)) {
       setIsUserDropdownOpen(false);
     }
+    
   };
 
   useEffect(() => {
@@ -41,16 +43,24 @@ const Navbar = () => {
     setIsUserDropdownOpen(!isUserDropdownOpen);
   };
 
+  const handleSearchClick = () => {
+    setShowSuggestions(true); // Show suggestions when search input is clicked
+  };
+
+  const handleSuggestionClick = () => {
+    setShowSuggestions(false); // Hide suggestions when suggestion is clicked
+  };
+
   return (
-    <header className="flex items-center justify-between bg-gray-950 px-4 py-3 text-white md:px-6">
+    <header className="fixed z-50 w-full flex items-center justify-between bg-gray-950 px-4 py-3 text-white md:px-6">
       <div className="flex items-center gap-4">
         <Link className="flex items-center gap-2 mr-6" to="/">
           <TwitchIcon className="h-6 w-6" />
         </Link>
         {!isSearchVisible && (
           <div className="hidden md:flex gap-4">
-            <Link className="hover:text-purple-400" to="/connections">Connections</Link>
-            <Link className="hover:text-purple-400" to="/jobs">Jobs</Link>
+            <Link className="hover:text-purple-400 font-bold" to="/connections">Connections</Link>
+            <Link className="hover:text-purple-400 font-bold" to="/jobs">Jobs</Link>
           </div>
         )}
         {!isSearchVisible && (
@@ -58,8 +68,7 @@ const Navbar = () => {
             <Link to="/connections" className="rounded-full" size="icon" variant="ghost">
               <ConnectionsIcon className="h-5 w-5" />
               <span className="sr-only">Connections</span>
-
-              </Link>
+            </Link>
             <Link to='/jobs' className="rounded-full" size="icon" variant="ghost">
               <JobsIcon className="h-5 w-5" />
               <span className="sr-only">Jobs</span>
@@ -79,10 +88,18 @@ const Navbar = () => {
             className="w-full rounded-l-lg border border-gray-800 bg-black px-4 py-2 text-sm focus:border-purple-600 focus:outline-none"
             placeholder="Search..."
             type="search"
+            onClick={handleSearchClick} // Show suggestions on input click
           />
           <button className="px-3 py-2 text-sm rounded-r-lg bg-gray-700 hover:bg-gray-600">
             <SearchIcon className="h-4 w-4" />
           </button>
+          {showSuggestions && ( // Show suggestions when state is true
+            <div className="absolute top-0 mt-10 w-full bg-gray-900 shadow-lg rounded-md z-50 rounded-lg">
+              {/* Suggestions go here */}
+              <Link onClick={handleSuggestionClick} to="/company"><div className="p-2 hover:bg-gray-700">Acme Inc.</div></Link>
+              <Link onClick={handleSuggestionClick} to="/profile"><div className="p-2 hover:bg-gray-700">Oliver James</div></Link>
+            </div>
+          )}
         </div>
       </form>
       <div className={`flex items-center gap-4 ${isSearchVisible ? 'hidden' : 'flex'}`}>

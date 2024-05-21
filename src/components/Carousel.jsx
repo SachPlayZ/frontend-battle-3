@@ -40,7 +40,7 @@ export default function CarouselComponent() {
                     return (
                         <div
                             key={index}
-                            className={`relative transition-opacity transition-transform duration-500 ${isActive ? 'w-3/4 opacity-100 transform-none z-20' : 'hidden sm:block w-1/4 opacity-50 transform scale-90'} ${isPrev ? 'sm:transform sm:-translate-x-full' : ''} ${isNext ? 'sm:transform sm:translate-x-full' : ''}`}
+                            className={`relative transition-opacity transition-transform duration-500 ${isActive ? 'w-full md:3/4 opacity-100 transform-none z-20' : 'hidden sm:block w-1/4 opacity-50 transform scale-90'} ${isPrev ? 'sm:transform sm:-translate-x-full' : ''} ${isNext ? 'sm:transform sm:translate-x-full' : ''}`}
                         >
                             <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden">
                                 <img
@@ -52,9 +52,9 @@ export default function CarouselComponent() {
                             </div>
                             {isActive && (
                                 <div className="absolute bottom-4 left-4 space-y-4 text-white transition-opacity">
-                                    <h3 className="text-3xl font-bold">{slide.title}</h3>
-                                    <p className="text-gray-300">{slide.description}</p>
-                                    <div className="flex space-x-2">
+                                    <h3 className="text-xl sm:text-3xl font-bold">{slide.title}</h3>
+                                    <p className="text-sm sm:text-base text-gray-300">{slide.description}</p>
+                                    <div className=" space-x-2 hidden md:flex">
                                         <button className="bg-gray-700 hover:bg-purple-600 text-white py-2 px-4 rounded">
                                             Read More
                                         </button>

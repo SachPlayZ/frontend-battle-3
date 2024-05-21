@@ -47,7 +47,7 @@ const LandingPage = () => {
   return (
     <div className='flex'>
         <Sidebar />
-        <div className="relative w-full max-w-5xl mx-auto overflow-hidden">
+        <div className="relative w-full max-w-5xl mx-auto overflow-hidden pt-20">
         <CarouselComponent />
         <LinkedinPost />
         <hr className="border-t border-gray-600 my-4" />

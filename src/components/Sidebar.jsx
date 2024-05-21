@@ -12,7 +12,7 @@ function AvatarImage({ src }) {
 function Badge({ children, isCollapsed }) {
   return (
     !isCollapsed && (
-      <span className="ml-auto inline-block px-2 py-1 text-xs font-semibold text-white bg-gray-600 hover:bg-purple-600 rounded-full cursor-pointer">
+      <span className="ml-auto inline-block px-3 py-1 text-xl font-semibold text-white bg-gray-600 hover:bg-purple-600 rounded-full cursor-pointer">
         {children}
       </span>
     )
@@ -29,7 +29,7 @@ function Button({ children, isCollapsed }) {
 
 function ShowMore({ children, isCollapsed }) {
   return (
-    <button className={`mt-3 py-1.5 px-1.5 text-sm font-semibold text-white bg-gray-700 ${isCollapsed ? 'rounded-full' : 'rounded-lg'} hover:bg-gray-600 flex items-center justify-center`}>
+    <button className={`mt-3 py-1.5 px-1.5 md:w-full text-sm font-semibold text-white bg-gray-700 ${isCollapsed ? 'rounded-full' : 'rounded-lg'} hover:bg-purple-600 flex items-center justify-center`}>
       {children}
     </button>
   );
@@ -59,7 +59,7 @@ function Sidebar() {
   }
 
   return (
-    <aside className={`bg-[#2a2a2a] text-white p-4 space-y-2 transition-width duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
+    <aside className={`bg-[#2a2a2a] pt-20 overflow-y-auto text-white px-4 pb-4 space-y-2 transition-width duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
       <div className="flex items-center justify-between">
         {!isCollapsed && <h2 className="text-xl font-semibold">For You</h2>}
         <button onClick={() => setIsCollapsed(!isCollapsed)} className="flex items-center justify-center">
@@ -67,10 +67,9 @@ function Sidebar() {
         </button>
       </div>
       <div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center">
           <h3 className={`text-lg font-semibold transition-opacity duration-300 ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>Recent</h3>
-          {isCollapsed && <ClockIcon className="h-8 w-8 mx-auto" />}
-          <ArrowUpDownIcon className={`h-5 w-5 transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`} />
+          {isCollapsed && <ClockIcon className="h-5 w-5 mx-auto" />}
         </div>
         <ul className="space-y-3 mt-3">
           {channels.map((channel, index) => renderChannel(channel, isCollapsed, index))}

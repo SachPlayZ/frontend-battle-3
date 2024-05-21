@@ -7,6 +7,8 @@ import ProfilePage from './pages/ProfilePage'
 import ConnectionsPage from './pages/ConnectionsPage'
 import JobPage from './pages/JobPage'
 import NotificationPage from './pages/NotificationPage'
+import MessagingPage from './pages/MessagingPage'
+import CompanyInfo from './components/CompanyInfo'
 function App() {
   return (
 <>
@@ -18,6 +20,8 @@ function App() {
   <Route path='/connections' element={<ConnectionsPage />} />
   <Route path='/jobs' element={<JobPage />} />
   <Route path='/notifications' element={<NotificationPage />} />
+  <Route path='/messages' element={<MessagingPage/>} />
+  <Route path='/company' element={<CompanyInfo/>} />
 </Routes>
 </>
 

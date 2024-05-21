@@ -43,7 +43,7 @@ export default function Component() {
           <AvatarImage alt="User profile" src="/46.jpg" />
         </Avatar>
         <Input
-          className="bg-[#333333] text-white placeholder-gray-500 rounded-full py-2 px-4 flex-grow"
+          className="bg-[#333333] text-white placeholder-gray-500 rounded-xl py-2 px-4 flex-grow focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-100"
           placeholder="Start a post, try writing with AI"
         />
       </div>
@@ -58,7 +58,7 @@ export default function Component() {
         </Button>
         <Button className="text-white flex-1">
           <DeleteIcon className="text-light h-5 w-5 mr-2" />
-          Write article
+          Write
         </Button>
       </div>
       
