@@ -12,7 +12,7 @@ function AvatarImage({ src }) {
 function Badge({ children, isCollapsed }) {
   return (
     !isCollapsed && (
-      <span className="ml-auto inline-block px-2 py-1 text-xs font-semibold text-white bg-gray-600 rounded-full">
+      <span className="ml-auto inline-block px-2 py-1 text-xs font-semibold text-white bg-gray-600 hover:bg-purple-600 rounded-full cursor-pointer">
         {children}
       </span>
     )
@@ -44,9 +44,9 @@ function Sidebar() {
       .then(response => {
         const users = response.data.results.map(user => ({
           name: `${user.name.first} ${user.name.last}`,
-          description: 'Random Description',
+          description: `${user.location.city}, ${user.location.country}`,
           avatar: user.picture.thumbnail,
-          badge: `${Math.floor(Math.random() * 1000)}`
+          badge: `+`
         }));
         setChannels(users);
       })

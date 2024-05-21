@@ -141,7 +141,10 @@ const Navbar = () => {
                   alt="User Avatar"
                 />
                 <span className="font-semibold text-gray-200">Oliver James</span>
-                <span className="text-sm text-gray-400">MERN Stack | Java Enthusiast | ML Virtuoso</span>
+                <span className="text-sm text-gray-400 mb-2">MERN Stack | Java Enthusiast | ML Virtuoso</span>
+                <Link to="/profile" className="text-center w-full bg-purple-600 md:bg-transparent border border-purple-600 text-gray-700 hover:bg-purple-600 dark:text-gray-50 dark:hover:text-gray-50 hover:text-gray-900 py-2 px-4 rounded">
+              View Profile
+            </Link>
               </div>
               <hr className="my-2 border-gray-700" />
               <Link className="flex items-center gap-2 px-4 py-2 text-gray-200 hover:bg-gray-700" to="#">

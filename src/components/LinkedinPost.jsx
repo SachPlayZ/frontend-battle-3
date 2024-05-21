@@ -1,4 +1,5 @@
 import React from 'react';
+  
 
 function AvatarImage(props) {
   return (
@@ -36,7 +37,7 @@ function Button(props) {
 
 export default function Component() {
   return (
-    <div className="bg-[#1A1A1A] rounded-lg pt-4 px-4">
+    <div className="bg-[#1A1A1A] rounded-lg pt-4 px-4 mx-8 md:mx-0">
       <div className="flex items-center space-x-4">
         <Avatar>
           <AvatarImage alt="User profile" src="/46.jpg" />
@@ -60,6 +61,7 @@ export default function Component() {
           Write article
         </Button>
       </div>
+      
     </div>
   );
 }
