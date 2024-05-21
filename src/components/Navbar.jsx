@@ -50,7 +50,7 @@ const Navbar = () => {
         {!isSearchVisible && (
           <div className="hidden md:flex gap-4">
             <Link className="hover:text-purple-400" to="/connections">Connections</Link>
-            <Link className="hover:text-purple-400" to="#">Jobs</Link>
+            <Link className="hover:text-purple-400" to="/jobs">Jobs</Link>
           </div>
         )}
         {!isSearchVisible && (
@@ -60,10 +60,10 @@ const Navbar = () => {
               <span className="sr-only">Connections</span>
 
               </Link>
-            <button className="rounded-full" size="icon" variant="ghost">
+            <Link to='/jobs' className="rounded-full" size="icon" variant="ghost">
               <JobsIcon className="h-5 w-5" />
               <span className="sr-only">Jobs</span>
-            </button>
+            </Link>
           </div>
         )}
       </div>

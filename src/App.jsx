@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage'
 import Navbar from './components/Navbar'
 import ProfilePage from './pages/ProfilePage'
 import ConnectionsPage from './pages/ConnectionsPage'
+import JobPage from './pages/JobPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
   <Route path="/" element={<LandingPage/>} />
   <Route path="/profile" element={<ProfilePage />} />
   <Route path='/connections' element={<ConnectionsPage />} />
+  <Route path='/jobs' element={<JobPage />} />
 </Routes>
 </>
 
