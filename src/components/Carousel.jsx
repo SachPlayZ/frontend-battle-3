@@ -30,7 +30,7 @@ export default function CarouselComponent() {
     };
 
     return (
-        <div className="relative w-full max-w-5xl mx-auto overflow-hidden mb-4">
+        <div className="relative w-full max-w-5xl mx-auto overflow-hidden mb-4 animate-fadeIn">
             <div className="flex items-center justify-center space-x-4">
                 {slides.map((slide, index) => {
                     const isActive = index === currentIndex;

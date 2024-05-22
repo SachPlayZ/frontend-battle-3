@@ -55,7 +55,7 @@ const Navbar = () => {
     <header className="fixed z-50 w-full flex items-center justify-between bg-gray-950 px-4 py-3 text-white md:px-6">
       <div className="flex items-center gap-4">
         <Link className="flex items-center gap-2 mr-6" to="/">
-          <TwitchIcon className="h-6 w-6" />
+          <img src='/chart.png' className="h-6 w-6" />
         </Link>
         {!isSearchVisible && (
           <div className="hidden md:flex gap-4">
@@ -94,7 +94,7 @@ const Navbar = () => {
             <SearchIcon className="h-4 w-4" />
           </button>
           {showSuggestions && ( // Show suggestions when state is true
-            <div className="absolute top-0 mt-10 w-full bg-gray-900 shadow-lg rounded-md z-50 rounded-lg">
+            <div className="absolute top-0 mt-10 w-full bg-gray-900 shadow-lg z-50 rounded-lg animate-fadeIn">
               {/* Suggestions go here */}
               <Link onClick={handleSuggestionClick} to="/company"><div className="p-2 hover:bg-gray-700">Acme Inc.</div></Link>
               <Link onClick={handleSuggestionClick} to="/profile"><div className="p-2 hover:bg-gray-700">Oliver James</div></Link>

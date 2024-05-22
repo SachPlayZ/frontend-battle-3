@@ -95,7 +95,7 @@ const NotificationList = () => {
         <h1 className="text-2xl font-bold text-gray-50 ps-6">Notifications</h1>
         <div className="mt-4">
           {notifications.map((notification, index) => (
-            <div key={notification.id} className={`px-6 flex items-center justify-between py-2 ${index === notifications.length - 1 ? '' : 'border-b border-gray-700'} hover:bg-gray-800 rounded`}>
+            <div key={notification.id} className={`px-6 flex animate-fadeIn items-center justify-between py-2 ${index === notifications.length - 1 ? '' : 'border-b border-gray-700'} hover:bg-gray-800 rounded`}>
               <div className="flex items-center">
                 <img className="w-10 h-10 rounded-full" src={notification.avatar} alt="User Avatar" />
                 <div className="ml-4">

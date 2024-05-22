@@ -49,7 +49,7 @@ const MessagingList = () => {
   return (
     <div className="flex h-screen md:h-3/4 w-full overflow-hidden bg-[#1A1A1A] text-gray-50 mt-4">
       {/* Left Sidebar */}
-      <div className="flex w-64 flex-col border-r border-gray-800 bg-[#1A1A1A] py-4">
+      <div className="flex w-64 flex-col border-r border-gray-800 bg-[#1A1A1A] py-4 animate-fadeIn">
         {/* Conversation List */}
         <div className="flex items-center justify-between px-4">
           <h2 className="text-lg font-semibold">Conversations</h2>
@@ -77,7 +77,7 @@ const MessagingList = () => {
       </div>
 
       {/* Right Chat Area */}
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col animate-fadeInlong">
         {/* Chat Header */}
         <div className="flex h-16 items-center justify-between border-b border-gray-800 px-6">
           <div className="flex items-center gap-3">

@@ -38,6 +38,7 @@ function ShowMore({ children, isCollapsed }) {
 function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [channels, setChannels] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     axios.get('https://randomuser.me/api/?results=5')
@@ -50,7 +51,8 @@ function Sidebar() {
         }));
         setChannels(users);
       })
-      .catch(error => console.error('Error fetching user data:', error));
+      .catch(error => console.error('Error fetching user data:', error))
+      .finally(() => setLoading(false)); // Set loading to false when data is loaded
   }, []);
 
   // Only render sidebar on non-mobile devices
@@ -60,36 +62,44 @@ function Sidebar() {
 
   return (
     <aside className={`bg-[#2a2a2a] pt-20 overflow-y-auto text-white px-4 pb-4 space-y-2 transition-width duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
-      <div className="flex items-center justify-between">
-        {!isCollapsed && <h2 className="text-xl font-semibold">For You</h2>}
-        <button onClick={() => setIsCollapsed(!isCollapsed)} className="flex items-center justify-center">
-          <ChevronLeftIcon className={`h-5 w-5 transition-transform duration-300 ${isCollapsed ? 'transform rotate-180' : ''}`} />
-        </button>
-      </div>
-      <div>
-        <div className="flex items-center">
-          <h3 className={`text-lg font-semibold transition-opacity duration-300 ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>Recent</h3>
-          {isCollapsed && <ClockIcon className="h-5 w-5 mx-auto" />}
-        </div>
-        <ul className="space-y-3 mt-3">
-          {channels.map((channel, index) => renderChannel(channel, isCollapsed, index))}
-        </ul>
-        <ShowMore isCollapsed={isCollapsed}>
-          {isCollapsed ? <DownArrowIcon className="h-5 w-5 mx-auto" /> : 'Show More'}
-        </ShowMore>
-      </div>
-      <div>
-        <div className="flex items-center justify-between">
-          <h3 className={`text-lg font-semibold transition-opacity duration-300 ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>Recommended</h3>
-          {isCollapsed && <StarIcon className="h-5 w-5 mx-auto" />}
-        </div>
-        <ul className="space-y-3 mt-3">
-          {channels.map((channel, index) => renderChannel(channel, isCollapsed, index))}
-        </ul>
-        <ShowMore isCollapsed={isCollapsed}>
-          {isCollapsed ? <DownArrowIcon className="h-5 w-5 mx-auto" /> : 'Show More'}
-        </ShowMore>
-      </div>
+      {loading && 
+      <div className="flex justify-center items-center h-screen">
+      <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-600"></div>
+    </div>}
+      {!loading && (
+        <>
+          <div className="flex items-center justify-between">
+            {!isCollapsed && <h2 className="text-xl font-semibold">For You</h2>}
+            <button onClick={() => setIsCollapsed(!isCollapsed)} className="flex items-center justify-center">
+              <ChevronLeftIcon className={`h-5 w-5 transition-transform duration-300 ${isCollapsed ? 'transform rotate-180' : ''}`} />
+            </button>
+          </div>
+          <div>
+            <div className="flex items-center">
+              <h3 className={`text-lg font-semibold transition-opacity duration-300 ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>Recent</h3>
+              {isCollapsed && <ClockIcon className="h-5 w-5 mx-auto" />}
+            </div>
+            <ul className="space-y-3 mt-3">
+              {channels.map((channel, index) => renderChannel(channel, isCollapsed, index))}
+            </ul>
+            <ShowMore isCollapsed={isCollapsed}>
+              {isCollapsed ? <DownArrowIcon className="h-5 w-5 mx-auto" /> : 'Show More'}
+            </ShowMore>
+          </div>
+          <div>
+            <div className="flex items-center justify-between">
+              <h3 className={`text-lg font-semibold transition-opacity duration-300 ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>Recommended</h3>
+              {isCollapsed && <StarIcon className="h-5 w-5 mx-auto" />}
+            </div>
+            <ul className="space-y-3 mt-3">
+              {channels.map((channel, index) => renderChannel(channel, isCollapsed, index))}
+            </ul>
+            <ShowMore isCollapsed={isCollapsed}>
+              {isCollapsed ? <DownArrowIcon className="h-5 w-5 mx-auto" /> : 'Show More'}
+            </ShowMore>
+          </div>
+        </>
+      )}
     </aside>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const LinkedInPostcard = ({ posts }) => {
   return (
-    <div className="flex flex-col space-y-6">
+    <div className="flex flex-col space-y-6 animate-fadeInlong">
       {posts.map((post, index) => (
         <div key={index} className="bg-[#1A1A1A] rounded-lg p-6 flex flex-col space-y-4 mx-8 md:mx-0">
           <div className="flex items-start space-x-4">
