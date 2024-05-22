@@ -38,7 +38,7 @@ const CompanyInfo = () => {
         <main className="flex-1 py-8 md:py-12 bg-gray-100 dark:bg-black">
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 md:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr] xl:grid-cols-[350px_1fr]">
-              <div className="flex flex-col items-center space-y-4 bg-white dark:bg-black p-6 rounded-lg shadow-lg">
+              <div className=" animate-fadeIn flex flex-col items-center space-y-4 bg-white dark:bg-black p-6 rounded-lg shadow-lg">
                 <div className="relative w-full max-w-[200px] md:max-w-[250px] lg:max-w-[300px]">
                   <img
                     alt="Company Logo"
@@ -72,7 +72,7 @@ const CompanyInfo = () => {
                   Contact Us
                 </button>
               </div>
-              <div className="space-y-8">
+              <div className="space-y-8 animate-fadeInlong">
                 <div className="relative space-y-4 bg-white dark:bg-[#1A1A1A] p-6 rounded-lg shadow-lg">
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">About Us</h2>
                   <p className="text-gray-600 dark:text-gray-300">

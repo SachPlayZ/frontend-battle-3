@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const slides = [
     {
@@ -28,6 +28,14 @@ export default function CarouselComponent() {
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleNext();
+        }, 2000); // Change slide every 2 seconds
+
+        return () => clearInterval(interval); // Clear interval on component unmount
+    }, []);
 
     return (
         <div className="relative w-full max-w-5xl mx-auto overflow-hidden mb-4 animate-fadeIn">
@@ -86,13 +94,13 @@ export default function CarouselComponent() {
             </div>
             <button
                 onClick={handlePrev}
-                className="absolute left-12 transform -translate-x-full -translate-y-1/2 z-30 bg-transparent hover:bg-gray-600 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center top-1/2 mt-8"
+                className="absolute left-12 transform -translate-x-full -translate-y-1/2 z-30 bg-transparent hover:bg-gray-600 text-white rounded-full p-2 w-10 h-10 md:flex hidden items-center justify-center top-1/2 mt-8"
             >
                 <ChevronLeftIcon className="h-6 w-6" />
             </button>
             <button
                 onClick={handleNext}
-                className="absolute right-12 transform translate-x-full -translate-y-1/2 z-30 bg-transparent hover:bg-gray-600 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center top-1/2 mt-8"
+                className="absolute right-12 transform translate-x-full -translate-y-1/2 z-30 bg-transparent hover:bg-gray-600 text-white rounded-full p-2 w-10 h-10 md:flex hidden items-center justify-center top-1/2 mt-8"
             >
                 <ChevronRightIcon className="h-6 w-6" />
             </button>

@@ -7,7 +7,7 @@ const ProfileInfo = () => {
     <main className="flex-1 py-8 md:py-12 bg-gray-100 dark:bg-black">
       <div className="container px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr] xl:grid-cols-[350px_1fr]">
-          <div className="flex flex-col items-center space-y-4 bg-white dark:bg-black p-6 rounded-lg shadow-lg">
+          <div className=" animate-fadeIn flex flex-col items-center space-y-4 bg-white dark:bg-black p-6 rounded-lg shadow-lg">
             <div className="relative w-full max-w-[200px] md:max-w-[250px] lg:max-w-[300px]">
               <img
                 alt="Profile"
@@ -41,7 +41,7 @@ const ProfileInfo = () => {
               Connect
             </button>
           </div>
-          <div className="space-y-8">
+          <div className="animate-fadeInlong space-y-8">
             <div className="relative space-y-4 bg-white dark:bg-[#1A1A1A] p-6 rounded-lg shadow-lg">
             <div className='flex justify-between'>
 

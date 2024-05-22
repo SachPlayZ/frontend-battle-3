@@ -55,13 +55,8 @@ function Sidebar() {
       .finally(() => setLoading(false)); // Set loading to false when data is loaded
   }, []);
 
-  // Only render sidebar on non-mobile devices
-  if (window.innerWidth < 768) {
-    return null; // Return null to prevent rendering
-  }
-
   return (
-    <aside className={`bg-[#2a2a2a] pt-20 overflow-y-auto text-white px-4 pb-4 space-y-2 transition-width duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
+    <aside className={`bg-[#2a2a2a] pt-20 md:block hidden text-white px-4 pb-4 space-y-2 transition-width duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
       {loading && 
       <div className="flex justify-center items-center h-screen">
       <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-600"></div>
